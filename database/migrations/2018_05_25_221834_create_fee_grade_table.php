@@ -14,9 +14,7 @@ class CreateFeeGradeTable extends Migration
     public function up()
     {
         Schema::create('fee_grade', function (Blueprint $table) {
-            
             $table->increments('id');
-
             $table->unsignedInteger('grade_id');
             $table->foreign('grade_id')
             ->references('id')->on('grades')
@@ -38,7 +36,6 @@ class CreateFeeGradeTable extends Migration
             ->onDelete('cascade');
 
             $table->unsignedInteger('fee_value')->default(0);
-            
             $table->timestamps();
         });
     }

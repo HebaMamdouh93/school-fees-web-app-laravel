@@ -15,4 +15,10 @@ class Fee extends Model
     {
         return $this->belongsToMany('App\Grade');
     }
+
+    //get all schools
+    public function schools()
+    {
+        return $this->belongsToMany('App\School','fee_grade');
+    }
 }

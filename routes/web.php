@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/insert', 'FeesController@index')->name('insert_page');
+
+Route::get('/home', 'FeesController@insert')->name('home_page');
+Route::post('/home', 'FeesController@store_insert');
+Route::post('/insert', 'FeesController@store');
